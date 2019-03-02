@@ -12,9 +12,9 @@ const activityListQueryResolver = async (_, args) => {
   const { data } = activityListResponse;
 
   const activityList = data.map(activity => {
-    const { id, name, type, start_date } = activity;
+    const { id, name, type, start_date, distance } = activity;
 
-    return { id, name, type, startDate: start_date };
+    return { id, name, type, startDate: start_date, distance: (distance * 0.000621371).toFixed(2) };
   });
 
   return activityList;
