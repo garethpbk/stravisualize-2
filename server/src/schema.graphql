@@ -1,0 +1,35 @@
+type Query {
+  activity(id: ID!): Activity!
+  activityList(count: Int!): [Activity!]!
+}
+
+type Activity {
+  id: ID!
+  name: String!
+  type: String!
+  distance: Float
+  movingTime: Int
+  elapsedTime: Int
+  totalElevationGain: Float
+  startDate: String
+  averageSpeed: Float
+  maxSpeed: Float
+  hasHeartrate: Boolean
+  averageHeartrate: Float
+  maxHeartrate: Float
+  calories: Int
+  map: Map
+  gear: Gear
+}
+
+type Map {
+  id: ID!
+  polyline: String
+  summaryPolyline: String
+}
+
+type Gear {
+  id: ID!
+  name: String!
+  distance: Int
+}

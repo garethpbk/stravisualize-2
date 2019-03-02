@@ -1,0 +1,20 @@
+{
+  "name": "stravisualize-graphql",
+  "version": "1.0.0",
+  "description": "GraphQL gateway to process Strava data",
+  "main": "index.js",
+  "author": "gareth bk",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "graphql-yoga": "^1.17.4"
+  }
+}
