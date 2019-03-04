@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 
+// import styled components
+import { ContentWrapper, ContentContainer } from './styled/AppStyled';
+
 const GET_ACTIVITY_LIST = gql`
   query GET_ACTIVITY_LIST($count: Int!) {
     activityList(count: $count) {
@@ -31,15 +34,17 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Stravisualize</h1>
-      <ul>
-        {data.activityList.map(i => (
-          <li key={i.id}>{`${i.name}, ${i.startDate}, ${i.distance}`}</li>
-        ))}
-      </ul>
-      <button onClick={() => setCount(count + 1)}>More!</button>
-    </div>
+    <ContentWrapper>
+      <ContentContainer>
+        <h1>Stravisualize</h1>
+        <ul>
+          {data.activityList.map(i => (
+            <li key={i.id}>{`${i.name}, ${i.startDate}, ${i.distance}`}</li>
+          ))}
+        </ul>
+        <button onClick={() => setCount(count + 1)}>More!</button>
+      </ContentContainer>
+    </ContentWrapper>
   );
 }
 
