@@ -1,6 +1,12 @@
 const theme = {
-  // OneTrust colors, mostly
-  colors: {},
+  // https://www.colourlovers.com/palette/38793/creative_cream
+  colors: {
+    green: '#CAFF42',
+    light: '#EBF7F8',
+    lightBlue: '#D0E0EB',
+    medBlue: '#88ABC2',
+    darkBlue: '#49708A',
+  },
   // good ol' Bootstrap-inspired breakpoints
   breakpoints: {
     sm: '576px',

@@ -5,6 +5,9 @@ import { ApolloProvider } from 'react-apollo-hooks';
 import { ThemeProvider } from 'styled-components';
 import theme from './util/theme';
 
+// import typeface
+import 'typeface-rubik';
+
 // import components
 import GlobalStyle from './components/styled/GlobalStyle';
 import App from './components/App';

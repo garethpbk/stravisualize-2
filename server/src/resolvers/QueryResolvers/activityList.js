@@ -1,4 +1,5 @@
 const axios = require('axios');
+const format = require('date-fns/format');
 
 const activityListQueryResolver = async (_, args) => {
   const { count } = args;
@@ -14,7 +15,13 @@ const activityListQueryResolver = async (_, args) => {
   const activityList = data.map(activity => {
     const { id, name, type, start_date_local, distance } = activity;
 
-    return { id, name, type, startDate: start_date_local, distance: (distance * 0.000621371).toFixed(2) };
+    return {
+      id,
+      name,
+      type,
+      startDate: format(start_date_local, 'MM/DD/YYYY'),
+      distance: (distance * 0.000621371).toFixed(2),
+    };
   });
 
   return activityList;
