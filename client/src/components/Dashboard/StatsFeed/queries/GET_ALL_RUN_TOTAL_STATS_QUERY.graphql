@@ -1,0 +1,11 @@
+query GET_ALL_RUN_TOTAL_STATS_QUERY($id: ID!, $type: String!) {
+  athleteStats(id: $id, type: $type) {
+    allRunTotal {
+      count
+      distance
+      movingTime
+      elapsedTime
+      elevationGain
+    }
+  }
+}

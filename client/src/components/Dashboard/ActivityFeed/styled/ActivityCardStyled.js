@@ -10,7 +10,7 @@ export const ActivityCardWrapper = styled.div`
   box-shadow: 3px 3px 0 ${getColor('dusk')};
 
   margin: 10px 0;
-  padding: 10px 15px;
+  padding: 15px 25px;
 
   cursor: pointer;
 
@@ -22,8 +22,26 @@ export const ActivityCardWrapper = styled.div`
   }
 `;
 
+export const ActivityCardContainer = styled.div`
+  display: flex;
+
+  div {
+    width: 100%;
+  }
+
+  svg {
+    height: auto;
+    width: 75px;
+
+    margin: 0 50px 0 0;
+  }
+`;
+
 export const ActivityCardTop = styled.div`
   display: flex;
+  justify-content: space-between;
+
+  margin: 0 0 10px 0;
 
   h2 {
     font-size: 2rem;
@@ -31,15 +49,18 @@ export const ActivityCardTop = styled.div`
 
     margin: 0;
     padding: 0;
-
-    &.name {
-      flex-basis: 65%;
-    }
-
-    &.date {
-      flex-basis: 35%;
-    }
   }
 `;
 
-export const ActivityCardBottom = styled.div``;
+export const ActivityCardBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: ${getFontWeight('regular')};
+
+    margin: 0;
+    padding: 0;
+  }
+`;

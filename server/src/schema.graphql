@@ -1,6 +1,7 @@
 type Query {
   activity(id: ID!): Activity!
-  activityList(count: Int!): [Activity!]!
+  activityList(count: Int!, page: Int): [Activity!]!
+  athleteStats(id: ID!, type: String!): AthleteStats!
 }
 
 type Activity {
@@ -32,4 +33,18 @@ type Gear {
   id: ID!
   name: String!
   distance: Int
+}
+
+type AthleteStats {
+  allRunTotal: AllTotal
+  allRideTotal: AllTotal
+  allSwimTotal: AllTotal
+}
+
+type AllTotal {
+  count: Int
+  distance: Float
+  movingTime: Int
+  elapsedTime: Int
+  elevationGain: Float
 }

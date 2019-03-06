@@ -5,11 +5,15 @@ const format = require('date-fns/format');
 const metersPerSecondToMilePace = require('../../util/metersPerSecondToMilePace');
 
 const activityListQueryResolver = async (_, args) => {
-  const { count } = args;
+  const { count, page } = args;
 
-  const activityListResponse = await axios.get(`https://www.strava.com/api/v3/athlete/activities?per_page=${count}`, {
+  const activityListResponse = await axios.get(`https://www.strava.com/api/v3/athlete/activities`, {
     headers: {
       Authorization: `Bearer ${process.env.STRAVA_API_KEY}`,
+    },
+    params: {
+      per_page: count,
+      page,
     },
   });
 

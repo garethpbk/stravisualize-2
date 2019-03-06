@@ -1,5 +1,4 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { loader } from 'graphql.macro';
 import { useQuery } from 'react-apollo-hooks';
 
@@ -26,8 +25,15 @@ const ActivityFeed = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        data.activityList.map(({ id, name, startDate, distance, averageSpeed }) => (
-          <ActivityCard key={id} name={name} startDate={startDate} distance={distance} averageSpeed={averageSpeed} />
+        data.activityList.map(({ id, name, type, startDate, distance, averageSpeed }) => (
+          <ActivityCard
+            key={id}
+            name={name}
+            type={type}
+            startDate={startDate}
+            distance={distance}
+            averageSpeed={averageSpeed}
+          />
         ))
       )}
     </DashboardFeedWrapper>

@@ -1,18 +1,32 @@
 import React from 'react';
 
 // import styled components
-import { ActivityCardWrapper, ActivityCardTop, ActivityCardBottom } from './styled/ActivityCardStyled';
+import {
+  ActivityCardWrapper,
+  ActivityCardContainer,
+  ActivityCardTop,
+  ActivityCardBottom,
+} from './styled/ActivityCardStyled';
 
-const ActivityCard = ({ name, startDate, distance, averageSpeed }) => (
+// import svg
+import { ReactComponent as RunIcon } from '../../../assets/icons/run-icon.svg';
+import { ReactComponent as CycleIcon } from '../../../assets/icons/cycle-icon.svg';
+
+const ActivityCard = ({ name, type, startDate, distance, averageSpeed }) => (
   <ActivityCardWrapper>
-    <ActivityCardTop>
-      <h2 className="name">{name}</h2>
-      <h2 className="date">{startDate}</h2>
-    </ActivityCardTop>
-    <ActivityCardBottom>
-      <h3>{`${distance} miles`}</h3>
-      <h3>{`${averageSpeed} / mi`}</h3>
-    </ActivityCardBottom>
+    <ActivityCardContainer>
+      {type === 'Run' ? <RunIcon /> : type === 'Ride' ? <CycleIcon /> : null}
+      <div>
+        <ActivityCardTop>
+          <h2>{name}</h2>
+          <h2>{startDate}</h2>
+        </ActivityCardTop>
+        <ActivityCardBottom>
+          <h3>{`${distance} miles`}</h3>
+          <h3>{`${averageSpeed} / mi`}</h3>
+        </ActivityCardBottom>
+      </div>
+    </ActivityCardContainer>
   </ActivityCardWrapper>
 );
 
