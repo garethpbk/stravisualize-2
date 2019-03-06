@@ -1,10 +1,15 @@
 import React from 'react';
 
+// import styled components
+import { DashboardFeedWrapper, DashboardFeedTitle } from '../styled';
+
 const StatsFeed = () => {
   return (
-    <div>
-      <h1>Stats Feed</h1>
-    </div>
+    <DashboardFeedWrapper>
+      <DashboardFeedTitle color="dawn" textShadow="podium">
+        Stats
+      </DashboardFeedTitle>
+    </DashboardFeedWrapper>
   );
 };
 

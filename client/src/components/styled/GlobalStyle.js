@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
+// import theme helpers
+import { getColor } from '../../util/theme';
+
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -18,6 +21,11 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 10px;
+  }
+
+  body {
+    //background-color: ${getColor('light')};
+    background-color: #f0f0f0;
   }
 
   #root {

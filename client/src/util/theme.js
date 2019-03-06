@@ -1,11 +1,23 @@
 const theme = {
   // https://www.colourlovers.com/palette/38793/creative_cream
   colors: {
-    green: '#CAFF42',
-    light: '#EBF7F8',
-    lightBlue: '#D0E0EB',
-    medBlue: '#88ABC2',
-    darkBlue: '#49708A',
+    green: '#caff42',
+    light: '#ebf7f8',
+    lightBlue: '#d0e0eb',
+    medBlue: '#88abc2',
+    darkBlue: '#49708a',
+
+    white: '#ffffff',
+
+    // strava colors
+    newell: '#fc4c02',
+    dusk: '#6134ff',
+    dawn: '#d23cff',
+    podium: '#fbcd00',
+    glacier: '#95e6f5',
+    twilight: '#022a79',
+    asphalt: '#60605a',
+    stone: '#efefe0',
   },
   // good ol' Bootstrap-inspired breakpoints
   breakpoints: {

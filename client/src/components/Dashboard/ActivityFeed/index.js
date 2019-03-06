@@ -1,31 +1,28 @@
 import React from 'react';
 import gql from 'graphql-tag';
+import { loader } from 'graphql.macro';
 import { useQuery } from 'react-apollo-hooks';
 
-// import styled components
+// import components
 import ActivityCard from './ActivityCard';
 
-const GET_ACTIVITY_LIST = gql`
-  query GET_ACTIVITY_LIST($count: Int!) {
-    activityList(count: $count) {
-      id
-      name
-      startDate
-      distance
-    }
-  }
-`;
+// import styled components
+import { DashboardFeedWrapper, DashboardFeedTitle } from '../styled';
+
+const GET_ACTIVITY_LIST_QUERY = loader('./queries/GET_ACTIVITY_LIST_QUERY.graphql');
 
 const ActivityFeed = () => {
-  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST, { variables: { count: 5 } });
+  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 25 } });
 
   if (error) {
     console.log(error);
   }
 
   return (
-    <div>
-      <h1>Activity Feed</h1>
+    <DashboardFeedWrapper>
+      <DashboardFeedTitle color="twilight" textShadow="glacier">
+        Activities
+      </DashboardFeedTitle>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -33,7 +30,7 @@ const ActivityFeed = () => {
           <ActivityCard key={i.id} name={i.name} startDate={i.startDate} distance={i.distance} />
         ))
       )}
-    </div>
+    </DashboardFeedWrapper>
   );
 };
 

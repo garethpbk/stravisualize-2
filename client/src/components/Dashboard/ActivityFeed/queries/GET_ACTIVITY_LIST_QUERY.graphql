@@ -1,0 +1,8 @@
+query GET_ACTIVITY_LIST($count: Int!) {
+  activityList(count: $count) {
+    id
+    name
+    startDate
+    distance
+  }
+}
