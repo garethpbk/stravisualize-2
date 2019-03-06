@@ -5,7 +5,7 @@ const activityQueryResolver = async (_, args) => {
 
   const activityResponse = await axios.get(`https://www.strava.com/api/v3/activities/${id}`, {
     headers: {
-      Authorization: `Bearer d91f7b4b7cd52eafc9f9a28b04479f16085c1a81`,
+      Authorization: `Bearer ${process.env.STRAVA_API_KEY}`,
     },
   });
 
