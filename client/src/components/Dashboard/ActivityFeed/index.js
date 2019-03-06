@@ -26,8 +26,8 @@ const ActivityFeed = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        data.activityList.map(i => (
-          <ActivityCard key={i.id} name={i.name} startDate={i.startDate} distance={i.distance} />
+        data.activityList.map(({ id, name, startDate, distance, averageSpeed }) => (
+          <ActivityCard key={id} name={name} startDate={startDate} distance={distance} averageSpeed={averageSpeed} />
         ))
       )}
     </DashboardFeedWrapper>

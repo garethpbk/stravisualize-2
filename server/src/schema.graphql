@@ -12,7 +12,7 @@ type Activity {
   elapsedTime: Int
   totalElevationGain: Float
   startDate: String
-  averageSpeed: Float
+  averageSpeed: String
   maxSpeed: Float
   hasHeartrate: Boolean
   averageHeartrate: Float
