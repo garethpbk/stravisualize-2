@@ -11,7 +11,7 @@ import { DashboardFeedWrapper, DashboardFeedTitle } from '../styled';
 const GET_ACTIVITY_LIST_QUERY = loader('./queries/GET_ACTIVITY_LIST_QUERY.graphql');
 
 const ActivityFeed = () => {
-  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 25 } });
+  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 200 } });
 
   if (error) {
     console.log(error);
@@ -25,11 +25,12 @@ const ActivityFeed = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        data.activityList.map(({ id, name, type, startDate, distance, averageSpeed }) => (
+        data.activityList.map(({ id, name, type, subType, startDate, distance, averageSpeed }) => (
           <ActivityCard
             key={id}
             name={name}
             type={type}
+            subType={subType}
             startDate={startDate}
             distance={distance}
             averageSpeed={averageSpeed}

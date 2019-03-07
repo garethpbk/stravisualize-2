@@ -20,12 +20,13 @@ const activityListQueryResolver = async (_, args) => {
   const { data } = activityListResponse;
 
   const activityList = data.map(activity => {
-    const { id, name, type, average_speed, start_date_local, distance } = activity;
+    const { id, name, type, average_speed, start_date_local, distance, start_latitude } = activity;
 
     return {
       id,
       name,
       type,
+      subType: start_latitude ? 'outside' : 'inside',
       averageSpeed: metersPerSecondToMilePace(average_speed),
       startDate: format(start_date_local, 'MM/DD/YYYY'),
       distance: (distance * 0.000621371).toFixed(2),

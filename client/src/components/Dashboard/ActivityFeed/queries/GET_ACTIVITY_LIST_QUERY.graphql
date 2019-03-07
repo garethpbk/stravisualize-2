@@ -3,6 +3,7 @@ query GET_ACTIVITY_LIST($count: Int!) {
     id
     name
     type
+    subType
     startDate
     distance
     averageSpeed

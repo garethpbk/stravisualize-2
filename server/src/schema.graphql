@@ -8,6 +8,7 @@ type Activity {
   id: ID!
   name: String!
   type: String!
+  subType: String
   distance: Float
   movingTime: Int
   elapsedTime: Int

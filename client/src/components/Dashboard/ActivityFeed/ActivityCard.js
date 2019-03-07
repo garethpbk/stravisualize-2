@@ -10,12 +10,22 @@ import {
 
 // import svg
 import { ReactComponent as RunIcon } from '../../../assets/icons/run-icon.svg';
+import { ReactComponent as TreadmillIcon } from '../../../assets/icons/treadmill-icon.svg';
 import { ReactComponent as CycleIcon } from '../../../assets/icons/cycle-icon.svg';
 
-const ActivityCard = ({ name, type, startDate, distance, averageSpeed }) => (
+const ActivityCard = ({ name, type, subType, startDate, distance, averageSpeed }) => (
   <ActivityCardWrapper>
     <ActivityCardContainer>
-      {type === 'Run' ? <RunIcon /> : type === 'Ride' ? <CycleIcon /> : null}
+      {type === 'Run' ? (
+        subType === 'outside' ? (
+          <RunIcon />
+        ) : (
+          <TreadmillIcon />
+        )
+      ) : type === 'Ride' ? (
+        <CycleIcon />
+      ) : null}
+      {/* {type === 'Run' ? <RunIcon /> : type === 'Ride' ? <CycleIcon /> : null} */}
       <div>
         <ActivityCardTop>
           <h2>{name}</h2>
