@@ -12,9 +12,7 @@ const StatsFeed = () => {
       <DashboardFeedTitle color="dawn" textShadow="podium">
         Stats
       </DashboardFeedTitle>
-      <div>
-        <AllTotalRunStats />
-      </div>
+      <AllTotalRunStats />
     </DashboardFeedWrapper>
   );
 };

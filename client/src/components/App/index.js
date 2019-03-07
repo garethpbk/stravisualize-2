@@ -3,6 +3,7 @@ import React from 'react';
 // import components
 import Header from './Header';
 import Dashboard from '../Dashboard';
+import Footer from './Footer';
 
 // import styled components
 import { ContentWrapper, ContentContainer } from './styled/AppStyled';
@@ -14,6 +15,7 @@ function App() {
       <ContentContainer>
         <Dashboard />
       </ContentContainer>
+      <Footer />
     </ContentWrapper>
   );
 }

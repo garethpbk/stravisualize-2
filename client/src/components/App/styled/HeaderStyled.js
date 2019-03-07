@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 // import theme helpers
-import { getColor, getFontWeight } from '../../../util/theme';
+import { getColor } from '../../../util/theme';
 
 // import styled components
 import { Grid } from '../../styled/Grid';
@@ -21,9 +21,12 @@ export const HeaderContainer = styled(Grid)`
   height: 100%;
 
   h1 {
-    color: ${getColor('twilight')};
-    font-size: 4rem;
-    font-weight: ${getFontWeight('thin')};
+    color: ${getColor('newell')};
+    font-family: Bangers, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 5rem;
+    letter-spacing: 0.75rem;
+    text-align: center;
+    text-shadow: 5px 5px ${getColor('twilight')};
 
     margin: 0;
   }

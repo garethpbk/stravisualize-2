@@ -2,7 +2,10 @@ import React from 'react';
 import { loader } from 'graphql.macro';
 import { useQuery } from 'react-apollo-hooks';
 
-// import query
+// import styled components
+import { StatsCardWrapper, StatsCardContainer } from './styled/StatsCardStyled';
+
+// load query
 const GET_ALL_RUN_TOTAL_STATS_QUERY = loader('./queries/GET_ALL_RUN_TOTAL_STATS_QUERY.graphql');
 
 const AllTotalRunStats = () => {
@@ -29,11 +32,31 @@ const AllTotalRunStats = () => {
   } = data;
 
   return (
-    <div>
-      <h1>All Time Run Stats</h1>
-      <h3>{`Count: ${count} runs`}</h3>
-      <h3>{`Distance: ${distance} miles`}</h3>
-    </div>
+    <StatsCardWrapper>
+      <StatsCardContainer>
+        <h1>All Time Run Stats</h1>
+        <div>
+          <h3>Count</h3>
+          <h4>{count} runs</h4>
+        </div>
+        <div>
+          <h3>Distance</h3>
+          <h4>{distance} miles</h4>
+        </div>
+        <div>
+          <h3>Total Time</h3>
+          <h4>{elapsedTime}</h4>
+        </div>
+        <div>
+          <h3>Moving Time</h3>
+          <h4>{movingTime}</h4>
+        </div>
+        <div>
+          <h3>Elevation Gain</h3>
+          <h4>{elevationGain} feet</h4>
+        </div>
+      </StatsCardContainer>
+    </StatsCardWrapper>
   );
 };
 

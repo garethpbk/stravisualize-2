@@ -45,7 +45,7 @@ type AthleteStats {
 type AllTotal {
   count: Int
   distance: Float
-  movingTime: Int
-  elapsedTime: Int
+  movingTime: String
+  elapsedTime: String
   elevationGain: Float
 }

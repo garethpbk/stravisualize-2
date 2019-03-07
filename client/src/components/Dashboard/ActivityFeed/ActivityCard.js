@@ -25,7 +25,6 @@ const ActivityCard = ({ name, type, subType, startDate, distance, averageSpeed }
       ) : type === 'Ride' ? (
         <CycleIcon />
       ) : null}
-      {/* {type === 'Run' ? <RunIcon /> : type === 'Ride' ? <CycleIcon /> : null} */}
       <div>
         <ActivityCardTop>
           <h2>{name}</h2>

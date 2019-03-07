@@ -1,5 +1,8 @@
 const axios = require('axios');
 
+// import converter functions
+const secondsToHoursAndMinutes = require('../../util/secondsToHoursAndMinutes');
+
 const athleteStatsQueryResolver = async (_, args) => {
   const { id, type } = args;
   const varsToAssign = ['count', 'distance', 'moving_time', 'elapsed_time', 'elevation_gain'];
@@ -22,9 +25,9 @@ const athleteStatsQueryResolver = async (_, args) => {
     [typeName]: {
       count: count,
       distance: (distance * 0.000621371).toFixed(2),
-      movingTime: moving_time,
-      elapsedTime: elapsed_time,
+      elapsedTime: secondsToHoursAndMinutes(elapsed_time),
       elevationGain: (elevation_gain * 3.28084).toFixed(2),
+      movingTime: secondsToHoursAndMinutes(moving_time),
     },
   };
 };

@@ -8,10 +8,11 @@ import ActivityCard from './ActivityCard';
 // import styled components
 import { DashboardFeedWrapper, DashboardFeedTitle } from '../styled';
 
+// load query
 const GET_ACTIVITY_LIST_QUERY = loader('./queries/GET_ACTIVITY_LIST_QUERY.graphql');
 
 const ActivityFeed = () => {
-  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 200 } });
+  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 5 } });
 
   if (error) {
     console.log(error);

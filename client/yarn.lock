@@ -8470,6 +8470,14 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+typeface-bangers@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-bangers/-/typeface-bangers-0.0.72.tgz#162cbcb17bb16feba38abe65ff653fd56a31feae"
+
+typeface-oswald@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-oswald/-/typeface-oswald-0.0.54.tgz#1e253011622cdd50f580c04e7d625e7f449763d7"
+
 typeface-rubik@^0.0.72:
   version "0.0.72"
   resolved "https://registry.yarnpkg.com/typeface-rubik/-/typeface-rubik-0.0.72.tgz#85d028dc66e8388a941f8c7ce194fad963d1824e"
