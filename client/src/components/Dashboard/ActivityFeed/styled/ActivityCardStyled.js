@@ -18,6 +18,7 @@ export const ActivityCardWrapper = styled.div`
 
   &:hover {
     box-shadow: 6px 6px 0 ${getColor('dusk')};
+
     transform: scale(1.01);
   }
 `;
