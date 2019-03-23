@@ -14,9 +14,9 @@ import { ReactComponent as TreadmillIcon } from '../../../assets/icons/treadmill
 import { ReactComponent as CycleIcon } from '../../../assets/icons/cycle-icon.svg';
 
 const ActivityCard = ({ name, type, subType, startDate, distance, averageSpeed, visible }) => {
-  if (!visible) {
-    return null;
-  }
+  // if (!visible) {
+  //   return null;
+  // }
 
   return (
     <ActivityCardWrapper>

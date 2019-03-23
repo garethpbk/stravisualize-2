@@ -6,7 +6,7 @@ import { useQuery } from 'react-apollo-hooks';
 import useVisibilityReducer from './hooks/useVisbilityReducer';
 
 // import components
-import ActivityCard from './ActivityCard';
+import ActivityCardFeed from './ActivityCardFeed';
 
 // import styled components
 import { DashboardFeedWrapper, DashboardFeedTitle } from '../styled';
@@ -54,22 +54,7 @@ const ActivityFeed = () => {
           <CycleIcon />
         </VisibilityIcon>
       </VisibilityBar>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        data.activityList.map(({ id, name, type, subType, startDate, distance, averageSpeed }) => (
-          <ActivityCard
-            key={id}
-            name={name}
-            type={type}
-            subType={subType}
-            startDate={startDate}
-            distance={distance}
-            averageSpeed={averageSpeed}
-            visible={state[type.toLowerCase()][subType]}
-          />
-        ))
-      )}
+      {loading ? <h1>Loading...</h1> : <ActivityCardFeed state={state} activityList={data.activityList} />}
     </DashboardFeedWrapper>
   );
 };
