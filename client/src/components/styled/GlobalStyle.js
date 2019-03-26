@@ -40,6 +40,11 @@ const GlobalStyle = createGlobalStyle`
   button, input {
     font-family: Oswald, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;

@@ -1,8 +1,10 @@
 import React from 'react';
+import { Router } from '@reach/router';
 
 // import components
 import Header from './Header';
 import Dashboard from '../Dashboard';
+import Activity from '../Activity';
 import Footer from './Footer';
 
 // import styled components
@@ -13,7 +15,10 @@ function App() {
     <ContentWrapper>
       <Header />
       <ContentContainer>
-        <Dashboard />
+        <Router primary={false}>
+          <Dashboard path="/" />
+          <Activity path="/activity/:id" />
+        </Router>
       </ContentContainer>
       <Footer />
     </ContentWrapper>

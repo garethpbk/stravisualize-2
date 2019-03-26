@@ -13,7 +13,6 @@ const PosedCard = posed.div({
     opacity: 0,
     x: -100,
     applyAtEnd: { display: 'none' },
-    //delay: ({ i }) => i * 50,
   },
 });
 
@@ -23,6 +22,7 @@ const ActivityCardFeed = ({ activityList, state }) => (
       <PosedCard key={`${id}-posed`} pose={state[type.toLowerCase()][subType] ? 'open' : 'closed'} i={i}>
         <ActivityCard
           key={id}
+          id={id}
           name={name}
           type={type}
           subType={subType}

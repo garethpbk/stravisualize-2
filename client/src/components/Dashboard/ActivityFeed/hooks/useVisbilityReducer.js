@@ -7,9 +7,6 @@ function visibilityReducer(state, action) {
 
   const isCurrentToggleOff = !state[activity][subActivity];
 
-  console.log(allValues);
-  console.log(isCurrentToggleOff);
-
   switch (type) {
     case 'toggle':
       return {
