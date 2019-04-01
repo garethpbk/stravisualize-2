@@ -1,0 +1,28 @@
+query GET_ACTIVITY_QUERY($id: ID!) {
+  activity(id: $id) {
+    name
+    type
+    distance
+    movingTime
+    elapsedTime
+    totalElevationGain
+    startDate
+    averageSpeed
+    maxSpeed
+    hasHeartrate
+    averageHeartrate
+    maxHeartrate
+    calories
+    startLatitude
+    startLongitude
+    map {
+      decodedPolyline
+      decodedSummaryPolyline
+    }
+    gear {
+      id
+      name
+      distance
+    }
+  }
+}

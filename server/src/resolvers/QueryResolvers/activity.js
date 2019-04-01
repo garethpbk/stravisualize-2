@@ -1,4 +1,9 @@
 const axios = require('axios');
+const format = require('date-fns/format');
+const polyline = require('@mapbox/polyline');
+
+// import converter functions
+const metersPerSecondToMilePace = require('../../util/metersPerSecondToMilePace');
 
 const activityQueryResolver = async (_, args) => {
   const { id } = args;
@@ -25,6 +30,8 @@ const activityQueryResolver = async (_, args) => {
     average_heartrate,
     max_heartrate,
     calories,
+    start_latitude,
+    start_longitude,
     map,
     gear,
   } = data;
@@ -36,17 +43,21 @@ const activityQueryResolver = async (_, args) => {
     movingTime: moving_time,
     elapsedTime: elapsed_time,
     totalElevationGain: (total_elevation_gain * 3.28084).toFixed(2),
-    startDate: start_date_local,
-    averageSpeed: average_speed,
+    startDate: format(start_date_local, 'MMMM DD, YYYY'),
+    averageSpeed: metersPerSecondToMilePace(average_speed),
     maxSpeed: max_speed,
     hasHeartrate: has_heartrate,
     averageHeartrate: average_heartrate,
     maxHeartrate: max_heartrate,
     calories,
+    startLatitude: start_latitude,
+    startLongitude: start_longitude,
     map: {
       id: map.id,
       polyline: map.polyline,
       summaryPolyline: map.summary_polyline,
+      decodedPolyline: polyline.decode(map.polyline),
+      decodedSummaryPolyline: polyline.decode(map.summary_polyline),
     },
     gear: {
       id: gear.id,

@@ -23,7 +23,7 @@ const GET_ACTIVITY_LIST_QUERY = loader('./queries/GET_ACTIVITY_LIST_QUERY.graphq
 const ActivityFeed = () => {
   const [state, dispatch] = useVisibilityReducer();
 
-  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 20 } });
+  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 50 } });
 
   if (error) {
     console.log(error);

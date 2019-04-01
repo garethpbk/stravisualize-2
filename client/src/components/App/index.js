@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Router } from '@reach/router';
+import PosedRouter from './Router';
 
 // import components
 import Header from './Header';
@@ -15,10 +16,12 @@ function App() {
     <ContentWrapper>
       <Header />
       <ContentContainer>
-        <Router primary={false}>
+        <PosedRouter>
+          {/* <Router primary={false}> */}
           <Dashboard path="/" />
           <Activity path="/activity/:id" />
-        </Router>
+          {/* </Router> */}
+        </PosedRouter>
       </ContentContainer>
       <Footer />
     </ContentWrapper>

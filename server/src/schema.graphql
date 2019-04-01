@@ -20,6 +20,8 @@ type Activity {
   averageHeartrate: Float
   maxHeartrate: Float
   calories: Int
+  startLatitude: Float
+  startLongitude: Float
   map: Map
   gear: Gear
 }
@@ -28,6 +30,8 @@ type Map {
   id: ID!
   polyline: String
   summaryPolyline: String
+  decodedPolyline: [[Float]]
+  decodedSummaryPolyline: [[Float]]
 }
 
 type Gear {

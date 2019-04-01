@@ -28,7 +28,7 @@ const activityListQueryResolver = async (_, args) => {
       type,
       subType: start_latitude ? 'outside' : 'inside',
       averageSpeed: metersPerSecondToMilePace(average_speed),
-      startDate: format(start_date_local, 'MM/DD/YYYY'),
+      startDate: format(start_date_local, 'M/DD/YYYY'),
       distance: (distance * 0.000621371).toFixed(2),
     };
   });
