@@ -6,7 +6,19 @@ import { useQuery } from 'react-apollo-hooks';
 import Map from './Map';
 
 // import styled components
-import { ActivityContent, ActivityDate, ActivityHeader, ActivityName } from './styled';
+import {
+  ActivityContentItem,
+  ActivityContentType,
+  ActivityContentWrapper,
+  ActivityDate,
+  ActivityHeader,
+  ActivityName,
+} from './styled';
+
+// import svg
+import { ReactComponent as RunIcon } from '../../assets/icons/run-icon.svg';
+import { ReactComponent as TreadmillIcon } from '../../assets/icons/treadmill-icon.svg';
+import { ReactComponent as CycleIcon } from '../../assets/icons/cycle-icon.svg';
 
 const GET_ACTIVITY_QUERY = loader('./queries/GET_ACTIVITY_QUERY.graphql');
 
@@ -20,7 +32,7 @@ function Activity(props) {
   console.log(data);
 
   const {
-    activity: { averageHeartrate, averageSpeed, calories, distance, movingTime, name, startDate },
+    activity: { averageHeartrate, averageSpeed, calories, distance, movingTime, name, startDate, type },
   } = data;
 
   return (
@@ -30,13 +42,29 @@ function Activity(props) {
         <ActivityDate>{startDate}</ActivityDate>
       </ActivityHeader>
       <Map activity={data.activity} />
-      <ActivityContent>
-        <div>{distance} miles</div>
-        <div>{movingTime}</div>
-        <div>{calories}</div>
-        <div>{averageSpeed} min/mile</div>
-        <div>{averageHeartrate} avg bpm</div>
-      </ActivityContent>
+      <ActivityContentWrapper>
+        <ActivityContentType>{type === 'Run' ? <RunIcon /> : <CycleIcon />}</ActivityContentType>
+        <ActivityContentItem>
+          <h4>Distance</h4>
+          <h3>{distance} miles</h3>
+        </ActivityContentItem>
+        <ActivityContentItem>
+          <h4>Moving Time</h4>
+          <h3>{movingTime}</h3>
+        </ActivityContentItem>
+        <ActivityContentItem>
+          <h4>Calories Burned</h4>
+          <h3>{calories}</h3>
+        </ActivityContentItem>
+        <ActivityContentItem>
+          <h4>Average Pace</h4>
+          <h3>{averageSpeed} min/mile</h3>
+        </ActivityContentItem>
+        <ActivityContentItem>
+          <h4>Average Heart Rate</h4>
+          <h3>{averageHeartrate} bpm</h3>
+        </ActivityContentItem>
+      </ActivityContentWrapper>
     </div>
   );
 }

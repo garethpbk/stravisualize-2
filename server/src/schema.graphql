@@ -19,7 +19,7 @@ type Activity {
   hasHeartrate: Boolean
   averageHeartrate: Float
   maxHeartrate: Float
-  calories: Int
+  calories: Float
   startLatitude: Float
   startLongitude: Float
   map: Map

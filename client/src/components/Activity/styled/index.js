@@ -1,6 +1,8 @@
-import ActivityContent from './ActivityContent';
+import ActivityContentItem from './ActivityContentItem';
+import ActivityContentType from './ActivityContentType';
+import ActivityContentWrapper from './ActivityContentWrapper';
 import ActivityDate from './ActivityDate';
 import ActivityHeader from './ActivityHeader';
 import ActivityName from './ActivityName';
 
-export { ActivityContent, ActivityDate, ActivityHeader, ActivityName };
+export { ActivityContentItem, ActivityContentType, ActivityContentWrapper, ActivityDate, ActivityHeader, ActivityName };
