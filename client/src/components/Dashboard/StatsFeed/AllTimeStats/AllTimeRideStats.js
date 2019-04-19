@@ -3,14 +3,14 @@ import { loader } from 'graphql.macro';
 import { useQuery } from 'react-apollo-hooks';
 
 // import component template
-import TotalStats from './TotalStats';
+import TotalStatsCard from '../TotalStatsCard';
 
 // load query
-const GET_ALL_RUN_TOTAL_STATS_QUERY = loader('./queries/GET_ALL_RUN_TOTAL_STATS_QUERY.graphql');
+const GET_ALL_RIDE_TOTAL_STATS_QUERY = loader('../queries/GET_ALL_RIDE_TOTAL_STATS_QUERY.graphql');
 
-const AllTotalRunStats = () => {
-  const { data, error, loading } = useQuery(GET_ALL_RUN_TOTAL_STATS_QUERY, {
-    variables: { id: 3001031, type: 'run', interval: 'all' },
+const AllTimeRideStats = () => {
+  const { data, error, loading } = useQuery(GET_ALL_RIDE_TOTAL_STATS_QUERY, {
+    variables: { id: 3001031, type: 'ride', interval: 'all' },
   });
 
   if (error) {
@@ -27,15 +27,16 @@ const AllTotalRunStats = () => {
     );
   }
 
+  console.log(data);
   const {
     athleteStats: {
-      allRunTotal: { count, distance, elapsedTime, movingTime, elevationGain },
+      allRideTotal: { count, distance, elapsedTime, movingTime, elevationGain },
     },
   } = data;
 
   return (
-    <TotalStats
-      type="Run"
+    <TotalStatsCard
+      type="Ride"
       interval="All Time"
       count={count}
       distance={distance}
@@ -46,4 +47,4 @@ const AllTotalRunStats = () => {
   );
 };
 
-export default AllTotalRunStats;
+export default AllTimeRideStats;
