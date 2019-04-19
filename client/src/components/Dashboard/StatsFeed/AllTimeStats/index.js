@@ -8,17 +8,17 @@ import AllTimeRunStats from './AllTimeRunStats';
 // import styled components
 import { StatsCardWrapper } from '../styled';
 
-function AllTimeStats() {
+function AllTimeStats(props) {
   const [activeType, setActiveType] = useState('run');
 
   const drawActiveStatsCard = () => {
     switch (activeType) {
       case 'run':
-        return <AllTimeRunStats />;
+        return <AllTimeRunStats authToken={props.authToken} />;
       case 'ride':
-        return <AllTimeRideStats />;
+        return <AllTimeRideStats authToken={props.authToken} />;
       default:
-        return <AllTimeRunStats />;
+        return <AllTimeRunStats authToken={props.authToken} />;
     }
   };
 

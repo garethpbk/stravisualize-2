@@ -4,7 +4,8 @@ const axios = require('axios');
 const secondsToHoursAndMinutes = require('../../util/secondsToHoursAndMinutes');
 
 const athleteStatsQueryResolver = async (_, args) => {
-  const { id, type, interval } = args;
+  const { authToken, id, type, interval } = args;
+
   const varsToAssign = ['count', 'distance', 'moving_time', 'elapsed_time', 'elevation_gain'];
   const varToReturn = {};
   const dataTypeProp = `${interval}_${type}_totals`;
@@ -12,7 +13,7 @@ const athleteStatsQueryResolver = async (_, args) => {
 
   const athleteStatsResponse = await axios.get(`https://www.strava.com/api/v3/athletes/${id}/stats`, {
     headers: {
-      Authorization: `Bearer ${process.env.STRAVA_API_KEY}`,
+      Authorization: `Bearer ${authToken}`,
     },
   });
 

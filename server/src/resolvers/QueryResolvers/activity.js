@@ -6,11 +6,11 @@ const polyline = require('@mapbox/polyline');
 const metersPerSecondToMilePace = require('../../util/metersPerSecondToMilePace');
 
 const activityQueryResolver = async (_, args) => {
-  const { id } = args;
+  const { authToken, id } = args;
 
   const activityResponse = await axios.get(`https://www.strava.com/api/v3/activities/${id}`, {
     headers: {
-      Authorization: `Bearer ${process.env.STRAVA_API_KEY}`,
+      Authorization: `Bearer ${authToken}`,
     },
   });
 

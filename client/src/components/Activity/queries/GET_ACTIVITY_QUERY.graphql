@@ -1,5 +1,5 @@
-query GET_ACTIVITY_QUERY($id: ID!) {
-  activity(id: $id) {
+query GET_ACTIVITY_QUERY($id: ID!, $authToken: String!) {
+  activity(id: $id, authToken: $authToken) {
     name
     type
     distance

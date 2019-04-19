@@ -1,5 +1,5 @@
-query GET_ACTIVITY_LIST($count: Int!) {
-  activityList(count: $count) {
+query GET_ACTIVITY_LIST($count: Int!, $authToken: String!) {
+  activityList(count: $count, authToken: $authToken) {
     id
     name
     type

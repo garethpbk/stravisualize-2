@@ -7,10 +7,10 @@ import StatsFeed from './StatsFeed';
 // import styled components
 import { DashboardWrapper } from './styled';
 
-const Dashboard = () => (
+const Dashboard = ({ authToken }) => (
   <DashboardWrapper>
-    <ActivityFeed />
-    <StatsFeed />
+    <ActivityFeed authToken={authToken} />
+    <StatsFeed authToken={authToken} />
   </DashboardWrapper>
 );
 

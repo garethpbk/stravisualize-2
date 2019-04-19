@@ -1,5 +1,5 @@
-query GET_ALL_RUN_TOTAL_STATS_QUERY($id: ID!, $type: String!, $interval: String!) {
-  athleteStats(id: $id, type: $type, interval: $interval) {
+query GET_ALL_RUN_TOTAL_STATS_QUERY($id: ID!, $type: String!, $interval: String!, $authToken: String!) {
+  athleteStats(id: $id, type: $type, interval: $interval, authToken: $authToken) {
     allRunTotal {
       count
       distance

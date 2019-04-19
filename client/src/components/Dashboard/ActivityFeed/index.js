@@ -20,10 +20,12 @@ import { ReactComponent as CycleIcon } from '../../../assets/icons/cycle-icon.sv
 // load query
 const GET_ACTIVITY_LIST_QUERY = loader('./queries/GET_ACTIVITY_LIST_QUERY.graphql');
 
-const ActivityFeed = () => {
+function ActivityFeed(props) {
   const [state, dispatch] = useVisibilityReducer();
 
-  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, { variables: { count: 50 } });
+  const { data, error, loading } = useQuery(GET_ACTIVITY_LIST_QUERY, {
+    variables: { authToken: props.authToken, count: 50 },
+  });
 
   if (error) {
     console.log(error);
@@ -57,6 +59,6 @@ const ActivityFeed = () => {
       {loading ? <h1>Loading...</h1> : <ActivityCardFeed state={state} activityList={data.activityList} />}
     </DashboardFeedWrapper>
   );
-};
+}
 
 export default ActivityFeed;

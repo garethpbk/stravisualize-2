@@ -23,7 +23,9 @@ import { ReactComponent as CycleIcon } from '../../assets/icons/cycle-icon.svg';
 const GET_ACTIVITY_QUERY = loader('./queries/GET_ACTIVITY_QUERY.graphql');
 
 function Activity(props) {
-  const { data, error, loading } = useQuery(GET_ACTIVITY_QUERY, { variables: { id: props.id } });
+  const { data, error, loading } = useQuery(GET_ACTIVITY_QUERY, {
+    variables: { authToken: props.authToken, id: props.id },
+  });
 
   if (loading) return '<h1>Loading...</h1>';
 

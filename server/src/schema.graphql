@@ -1,7 +1,26 @@
 type Query {
-  activity(id: ID!): Activity!
-  activityList(count: Int!, page: Int): [Activity!]!
-  athleteStats(id: ID!, type: String!, interval: String!): AthleteStats!
+  authToken(authCode: String!): AuthToken!
+  activity(id: ID!, authToken: String!): Activity!
+  activityList(count: Int!, page: Int, authToken: String!): [Activity!]!
+  athleteStats(id: ID!, type: String!, interval: String!, authToken: String!): AthleteStats!
+}
+
+type AuthToken {
+  accessToken: String!
+  refreshToken: String
+  athlete: AuthAthlete
+}
+
+type AuthAthlete {
+  id: ID!
+  firstName: String
+  lastName: String
+  sex: String
+  city: String
+  state: String
+  country: String
+  profile: String
+  profileMedium: String
 }
 
 type Activity {

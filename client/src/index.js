@@ -4,6 +4,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo-hooks';
 import { ThemeProvider } from 'styled-components';
 import theme from './util/theme';
+import { Router } from '@reach/router';
 
 // import typefaces
 import 'typeface-bangers';
@@ -23,7 +24,9 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <App />
+        <Router>
+          <App path="/*" />
+        </Router>
       </>
     </ThemeProvider>
   </ApolloProvider>,

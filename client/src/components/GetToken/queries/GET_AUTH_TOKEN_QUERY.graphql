@@ -1,0 +1,17 @@
+query GET_AUTH_TOKEN_QUERY($authCode: String!) {
+  authToken(authCode: $authCode) {
+    accessToken
+    refreshToken
+    athlete {
+      id
+      firstName
+      lastName
+      sex
+      city
+      state
+      country
+      profile
+      profileMedium
+    }
+  }
+}

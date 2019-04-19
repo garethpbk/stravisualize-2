@@ -8,9 +8,9 @@ import TotalStatsCard from '../TotalStatsCard';
 // load query
 const GET_ALL_RUN_TOTAL_STATS_QUERY = loader('./queries/GET_ALL_RUN_TOTAL_STATS_QUERY.graphql');
 
-const AllTimeRunStats = () => {
+function AllTimeRunStats(props) {
   const { data, error, loading } = useQuery(GET_ALL_RUN_TOTAL_STATS_QUERY, {
-    variables: { id: 3001031, type: 'run', interval: 'all' },
+    variables: { authToken: props.authToken, id: 3001031, type: 'run', interval: 'all' },
   });
 
   if (error) {
@@ -44,6 +44,6 @@ const AllTimeRunStats = () => {
       elevationGain={elevationGain}
     />
   );
-};
+}
 
 export default AllTimeRunStats;
