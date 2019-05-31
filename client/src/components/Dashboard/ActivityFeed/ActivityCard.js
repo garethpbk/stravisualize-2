@@ -2,12 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router';
 
 // import styled components
-import {
-  ActivityCardWrapper,
-  ActivityCardContainer,
-  ActivityCardTop,
-  ActivityCardBottom,
-} from './styled/ActivityCardStyled';
+import { ActivityCardWrapper, ActivityCardContainer, ActivityCardTop, ActivityCardBottom } from './styled';
 
 // import svg
 import { ReactComponent as RunIcon } from '../../../assets/icons/run-icon.svg';

@@ -21,8 +21,10 @@ function Authorize(props) {
   }, []);
 
   return (
-    <div>
-      <a href={url}>Navigate</a>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <a href={url} style={{ fontSize: '48px' }}>
+        🚲 GO TO STRAVA AUTHORIZATION
+      </a>
     </div>
   );
 }

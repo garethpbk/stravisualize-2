@@ -4,16 +4,9 @@ import styled from 'styled-components/macro';
 import { getColor, getFontWeight } from '../../../util/theme';
 
 // import styled components
-import { Grid } from '../../styled/Grid';
+import { Grid } from '../../styled';
 
-export const FooterWrapper = styled.footer`
-  background-color: ${getColor('newell')};
-  border-top: 2px solid ${getColor('twilight')};
-
-  height: 65px;
-`;
-
-export const FooterContainer = styled(Grid)`
+const FooterContainer = styled(Grid)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,3 +32,5 @@ export const FooterContainer = styled(Grid)`
     width: 125px;
   }
 `;
+
+export default FooterContainer;

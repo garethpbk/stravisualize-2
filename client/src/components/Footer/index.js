@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import styled components
-import { FooterWrapper, FooterContainer } from './styled/Footerstyled';
+import { FooterWrapper, FooterContainer } from './styled';
 
 // import svg
 import { ReactComponent as PoweredByStrava } from '../../assets/strava/powered-by-strava-vert-white.svg';

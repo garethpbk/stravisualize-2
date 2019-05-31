@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 import { getBreakpoint } from '../../util/theme';
 
-export const Grid = styled.div`
+const Grid = styled.div`
   margin: 0 auto;
 
   max-width: 100%;
@@ -23,3 +23,5 @@ export const Grid = styled.div`
     width: 1184px;
   }
 `;
+
+export default Grid;

@@ -1,14 +1,9 @@
 import styled from 'styled-components/macro';
 
+// import theme helpers
 import { getColor } from '../../../../util/theme';
 
-export const VisibilityBar = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-export const VisibilityIcon = styled.div`
+const ActivityFeedVisibilityIcon = styled.div`
   background-color: ${props => (props.visible ? 'lightseagreen' : 'lightcoral')};
 
   border: 2px solid transparent;
@@ -35,3 +30,5 @@ export const VisibilityIcon = styled.div`
     }
   }
 `;
+
+export default ActivityFeedVisibilityIcon;

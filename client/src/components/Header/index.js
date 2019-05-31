@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from '@reach/router';
 
 // import styled components
-import { HeaderWrapper, HeaderContainer, AnimatedLetter } from './styled/HeaderStyled';
+import { AnimatedLetter } from '../styled';
+import { HeaderWrapper, HeaderContainer } from './styled';
 
 const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <Link to="/">
-          {/* <h1>Stravisualize</h1> */}
           <h1>
             <AnimatedLetter delay={0}>S</AnimatedLetter>
             <AnimatedLetter delay={1}>t</AnimatedLetter>

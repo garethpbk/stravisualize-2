@@ -6,12 +6,12 @@ import PosedRouter from './Router';
 import Activity from '../Activity';
 import Authorize from '../Authorize';
 import Dashboard from '../Dashboard';
-import Footer from './Footer';
+import Footer from '../Footer';
 import GetToken from '../GetToken';
-import Header from './Header';
+import Header from '../Header';
 
 // import styled components
-import { ContentWrapper, ContentContainer } from './styled/AppStyled';
+import { AppContentWrapper, AppContentContainer } from './styled';
 
 function App(props) {
   const [authCode, setAuthCode] = useState(null);
@@ -22,18 +22,18 @@ function App(props) {
   if (!authToken) return <GetToken authCode={authCode} setAuthToken={setAuthToken} />;
 
   return (
-    <ContentWrapper>
+    <AppContentWrapper>
       <Header />
-      <ContentContainer>
+      <AppContentContainer>
         <PosedRouter>
           {/* <Router primary={false}> */}
           <Dashboard authToken={authToken} path="/" />
           <Activity authToken={authToken} path="/activity/:id" />
           {/* </Router> */}
         </PosedRouter>
-      </ContentContainer>
+      </AppContentContainer>
       <Footer />
-    </ContentWrapper>
+    </AppContentWrapper>
   );
 }
 

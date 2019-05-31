@@ -10,7 +10,7 @@ import ActivityCardFeed from './ActivityCardFeed';
 
 // import styled components
 import { DashboardFeedWrapper, DashboardFeedTitle } from '../styled';
-import { VisibilityBar, VisibilityIcon } from './styled/ActivityFeedStyled';
+import { ActivityFeedVisibilityBar, ActivityFeedVisibilityIcon } from './styled';
 
 // import svg
 import { ReactComponent as RunIcon } from '../../../assets/icons/run-icon.svg';
@@ -36,26 +36,26 @@ function ActivityFeed(props) {
       <DashboardFeedTitle color="twilight" textShadow="glacier">
         Activities
       </DashboardFeedTitle>
-      <VisibilityBar>
-        <VisibilityIcon
+      <ActivityFeedVisibilityBar>
+        <ActivityFeedVisibilityIcon
           visible={state.run.outside}
           onClick={() => dispatch({ type: 'toggle', activity: 'run', subActivity: 'outside' })}
         >
           <RunIcon />
-        </VisibilityIcon>
-        <VisibilityIcon
+        </ActivityFeedVisibilityIcon>
+        <ActivityFeedVisibilityIcon
           visible={state.run.inside}
           onClick={() => dispatch({ type: 'toggle', activity: 'run', subActivity: 'inside' })}
         >
           <TreadmillIcon />
-        </VisibilityIcon>
-        <VisibilityIcon
+        </ActivityFeedVisibilityIcon>
+        <ActivityFeedVisibilityIcon
           visible={state.ride.outside}
           onClick={() => dispatch({ type: 'toggle', activity: 'ride', subActivity: 'outside' })}
         >
           <CycleIcon />
-        </VisibilityIcon>
-      </VisibilityBar>
+        </ActivityFeedVisibilityIcon>
+      </ActivityFeedVisibilityBar>
       {loading ? <h1>Loading...</h1> : <ActivityCardFeed state={state} activityList={data.activityList} />}
     </DashboardFeedWrapper>
   );
