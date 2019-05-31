@@ -2,6 +2,10 @@ import React from 'react';
 import { loader } from 'graphql.macro';
 import { useQuery } from 'react-apollo-hooks';
 
+// import styled components
+import { GetTokenWrapper } from './styled';
+
+// load query
 const GET_AUTH_TOKEN_QUERY = loader('./queries/GET_AUTH_TOKEN_QUERY.graphql');
 
 function GetToken(props) {
@@ -15,9 +19,9 @@ function GetToken(props) {
 
   if (loading) {
     return (
-      <div>
+      <GetTokenWrapper>
         <h1>Getting access token...</h1>
-      </div>
+      </GetTokenWrapper>
     );
   }
 

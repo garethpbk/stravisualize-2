@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { Router } from '@reach/router';
 import PosedRouter from './Router';
 
@@ -17,7 +17,27 @@ function App(props) {
   const [authCode, setAuthCode] = useState(null);
   const [authToken, setAuthToken] = useState(null);
 
-  if (!authCode) return <Authorize location={props.location} setAuthCode={setAuthCode} />;
+  useEffect(() => {
+    if (authToken) {
+      const saveIsTrue = props.location.search.search('saveToLocalStoragetrue');
+
+      if (saveIsTrue !== -1) {
+        localStorage.setItem('stravisualizeToken', authToken);
+      }
+    }
+  }, [authToken]);
+
+  useEffect(() => {
+    if (!authCode) {
+      const tokenSavedToLocalStorage = localStorage.getItem('stravisualizeToken');
+
+      if (tokenSavedToLocalStorage) {
+        setAuthToken(tokenSavedToLocalStorage);
+      }
+    }
+  }, [authToken]);
+
+  if (!authCode && !authToken) return <Authorize location={props.location} setAuthCode={setAuthCode} />;
 
   if (!authToken) return <GetToken authCode={authCode} setAuthToken={setAuthToken} />;
 
