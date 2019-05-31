@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import { parse } from 'query-string';
 
+// import components
+import AnimatedTitle from '../AnimatedTitle';
+
+// import styled components
+import { AuthorizeLink, AuthorizeWrapper } from './styled';
+
 function Authorize(props) {
   const url = new URL('https://www.strava.com/oauth/authorize');
   const params = {
@@ -21,11 +27,15 @@ function Authorize(props) {
   }, []);
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <a href={url} style={{ fontSize: '48px' }}>
-        🚲 GO TO STRAVA AUTHORIZATION
-      </a>
-    </div>
+    <AuthorizeWrapper>
+      <AnimatedTitle />
+      <AuthorizeLink href={url}>
+        {/* <span aria-label="bike" role="img">
+          🚲
+        </span> */}
+        Authorize with Strava
+      </AuthorizeLink>
+    </AuthorizeWrapper>
   );
 }
 
