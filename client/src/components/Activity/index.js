@@ -3,6 +3,7 @@ import { loader } from 'graphql.macro';
 import { useQuery } from 'react-apollo-hooks';
 
 // import components
+import AnimatedLoading from '../AnimatedLoading';
 import Map from './Map';
 
 // import styled components
@@ -12,6 +13,7 @@ import {
   ActivityContentWrapper,
   ActivityDate,
   ActivityHeader,
+  ActivityLoadingWrapper,
   ActivityName,
 } from './styled';
 
@@ -27,7 +29,12 @@ function Activity(props) {
     variables: { authToken: props.authToken, id: props.id },
   });
 
-  if (loading) return '<h1>Loading...</h1>';
+  if (loading)
+    return (
+      <ActivityLoadingWrapper>
+        <AnimatedLoading />
+      </ActivityLoadingWrapper>
+    );
 
   if (error) return `Error!: ${error}`;
 

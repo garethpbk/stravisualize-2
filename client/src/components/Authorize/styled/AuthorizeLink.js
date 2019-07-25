@@ -8,7 +8,7 @@ const AuthorizeLink = styled.a`
   align-items: center;
   justify-content: center;
 
-  color: ${getColor('glacier')};
+  color: ${getColor('white')};
   font-size: 3rem;
 
   background-color: ${getColor('newell')};
